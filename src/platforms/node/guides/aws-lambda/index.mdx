@@ -99,8 +99,8 @@ The `captureAllSettledReasons` (default: `false`) option captures all promise re
 exports.handler = Sentry.AWSLambda.wrapHandler(
   () => {
     return Promise.allSettled([
-      Promise.rejected(new Error('first')),
-      Promise.rejected(new Error('second')),
+      Promise.reject(new Error('first')),
+      Promise.reject(new Error('second')),
     ]);
   },
   {captureAllSettledReasons: true}
